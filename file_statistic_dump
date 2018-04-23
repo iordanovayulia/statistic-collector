@@ -1,0 +1,106 @@
+-- MySQL dump 10.13  Distrib 5.6.38, for Win32 (AMD64)
+--
+-- Host: localhost    Database: file_statistic
+-- ------------------------------------------------------
+-- Server version	5.6.38-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `content`
+--
+
+DROP TABLE IF EXISTS `content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `content` (
+  `line_id` int(11) NOT NULL AUTO_INCREMENT,
+  `line_content` text NOT NULL,
+  `file_id` int(11) NOT NULL,
+  PRIMARY KEY (`line_id`),
+  KEY `FK_file_id` (`file_id`),
+  CONSTRAINT `FK_file_id` FOREIGN KEY (`file_id`) REFERENCES `files` (`file_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `content`
+--
+
+LOCK TABLES `content` WRITE;
+/*!40000 ALTER TABLE `content` DISABLE KEYS */;
+INSERT INTO `content` VALUES (1,'Ве́тер — поток воздуха, который быстро движется параллельно земной поверхности. На Земле ветер представляет собой движущийся преимущественно в горизонтальном направлении поток воздуха;на других планетах — поток свойственных им атмосферных газов. ',1),(2,'В Солнечной системе сильнейшие ветры наблюдаются на Нептуне и Сатурне. Солнечный ветер представляет собой поток разрежённых газов от звезды, а планетарный ветер — поток газов, отвечающий за дегазацию планетарной атмосферы в космическое пространство. Ветры, как правило, классифицируют по масштабам, скорости, видам сил, которые их вызывают, местам распространения и воздействию на окружающую среду.',1),(3,'В первую очередь ветры классифицируют по их силе, продолжительности и направлению. Так, порывами принято считать кратковременные (несколько секунд) и сильные перемещения воздуха. Сильные ветры средней продолжительности (примерно 1 мин) называют шквалами. ',1),(4,'Названия более продолжительных ветров зависят от силы, например, такими названиями являются бриз, буря, шторм, ураган, тайфун. ',1),(5,'Продолжительность ветра также сильно варьируется: некоторые грозы могут длиться несколько минут; бриз, зависящий от особенностей рельефа, а именно от разницы нагрева его элементов, — несколько часов; продолжительность глобальных ветров, вызванных сезонными изменениями температуры, — муссонов — составляет несколько месяцев, тогда как глобальные ветры, вызванные разницей в температуре на разных широтах и силой Кориолиса, — пассаты — дуют постоянно. Муссоны и пассаты являются ветрами, из которых слагается общая и местная циркуляция атмосферы.',1),(6,'Performance and Scalability Considerations',2),(7,'mysqldump advantages include the convenience and flexibility of viewing or even editing the output before restoring. You can clone databases for development and DBA work, or produce slight variations of an existing database for testing. It is not intended as a fast or scalable solution for backing up substantial amounts of data. With large data sizes, even if the backup step takes a reasonable time, restoring the data can be very slow because replaying the SQL statements involves disk I/O for insertion, index creation, and so on.',2),(8,'For large-scale backup and restore, a physical backup is more appropriate, to copy the data files in their original format that can be restored quickly:',2),(9,'If your tables are primarily InnoDB tables, or if you have a mix of InnoDB and MyISAM tables, consider using the mysqlbackup command of the MySQL Enterprise Backup product. (Available as part of the Enterprise subscription.) It provides the best performance for InnoDB backups with minimal disruption; it can also back up tables from MyISAM and other storage engines; and it provides a number of convenient options to accommodate different backup scenarios. See Section 29.2, “MySQL Enterprise Backup Overview”. ',2),(10,'mysqldump can retrieve and dump table contents row by row, or it can retrieve the entire content from a table and buffer it in memory before dumping it. Buffering in memory can be a problem if you are dumping large tables. To dump tables row by row, use the --quick option (or --opt, which enables --quick). The --opt option (and hence --quick) is enabled by default, so to enable memory buffering, use --skip-quick.',2),(11,'If you are using a recent version of mysqldump to generate a dump to be reloaded into a very old MySQL server, use the --skip-opt option instead of the --opt or --extended-insert option.',2),(12,'JavaScript and Java are completely different languages, both in concept and design.',3),(13,'JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.',3),(14,'ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.',3),(15,'You can read more about the different JavaScript versions in the chapter JS Versions.',3),(16,'Разме́рность физической величины — выражение, показывающее связь этой величины с основными величинами данной системы физических величин; записывается в виде произведения степеней сомножителей, соответствующих основным величинам, в котором численные коэффициенты опущены.',4),(17,'Говоря о размерности, следует различать понятия система физических величин и система единиц.',4),(18,'Под системой физических величин понимается совокупность физических величин вместе с совокупностью уравнений, связывающих эти величины между собой. В свою очередь, система единиц представляет собой набор основных и производных единиц вместе с их кратными и дольными единицами, определенными в соответствии с установленными правилами для данной системы физических величин[1].',4),(19,'Все величины, входящие в систему физических величин, делят на основные и производные. Под основными понимают величины, условно выбранные в качестве независимых так, что никакая основная величина не может быть выражена через другие основные. Все остальные величины системы определяются через основные величины и называются производными[1].',4),(20,'Каждой основной величине сопоставляется символ размерности в виде заглавной буквы латинского или греческого алфавита.',4);
+/*!40000 ALTER TABLE `content` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `details`
+--
+
+DROP TABLE IF EXISTS `details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `details` (
+  `line_id` int(11) NOT NULL,
+  `line_length` int(11) NOT NULL,
+  `average_word_length` float(4,2) NOT NULL,
+  `longest_word` varchar(30) NOT NULL,
+  `shortest_word` varchar(30) NOT NULL,
+  PRIMARY KEY (`line_id`),
+  CONSTRAINT `FK_line_id` FOREIGN KEY (`line_id`) REFERENCES `content` (`line_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `details`
+--
+
+LOCK TABLES `details` WRITE;
+/*!40000 ALTER TABLE `details` DISABLE KEYS */;
+INSERT INTO `details` VALUES (1,246,7.20,'преимущественно','—'),(2,398,6.67,'распространения','В'),(3,255,7.23,'продолжительности','В'),(4,127,6.94,'продолжительных','от'),(5,545,6.69,'Продолжительность','а'),(6,42,9.75,'Considerations','and'),(7,535,5.16,'convenience','a'),(8,152,5.12,'appropriate,','a'),(9,512,5.48,'subscription.)','a'),(10,416,4.71,'--skip-quick.','a'),(11,186,4.67,'--extended-insert','a'),(12,83,6.00,'JavaScript','in'),(13,85,4.73,'JavaScript','by'),(14,95,5.00,'ECMAScript','is'),(15,85,5.14,'JavaScript','in'),(16,270,8.03,'соответствующих','—'),(17,92,6.75,'размерности,','о'),(18,373,6.96,'установленными','с'),(19,338,6.70,'производными[1].','в'),(20,117,7.43,'сопоставляется','в');
+/*!40000 ALTER TABLE `details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `files`
+--
+
+DROP TABLE IF EXISTS `files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `files` (
+  `file_id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`file_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `files`
+--
+
+LOCK TABLES `files` WRITE;
+/*!40000 ALTER TABLE `files` DISABLE KEYS */;
+INSERT INTO `files` VALUES (1,'Ветер.txt'),(2,'MySQL.txt'),(3,'js.txt'),(4,'Размерность.txt');
+/*!40000 ALTER TABLE `files` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-04-23 17:35:26

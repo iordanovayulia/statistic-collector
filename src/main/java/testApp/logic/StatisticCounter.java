@@ -1,29 +1,38 @@
-package luxoft.test;
+package testApp.logic;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.List;
 
-public class StatisticCollector {
 
-    public int averageWordLength(List<String> words){
+
+public class StatisticCounter {
+
+    public static BigDecimal averageWordLength(List<String> words){
 
         int wordsQuantity;
 
         if((wordsQuantity = words.size()) > 0) {
 
-            int totalLength = 0;
+            double totalLength = 0;
 
             for (String word : words) {
 
-                int wordLength = word.length();
+                double wordLength = word.length();
                 totalLength += wordLength;
             }
 
-            return totalLength / wordsQuantity;
+            return new BigDecimal(totalLength / wordsQuantity, new MathContext(3, RoundingMode.HALF_EVEN));
         }
-        return 0;
+        return BigDecimal.ZERO;
     }
 
-    public String shortestWord(List<String> words){
+    public static Integer lineLength(String line){
+        return line.length();
+    }
+
+    public static String shortestWord(List<String> words){
 
         String shortestWord = "";
 
@@ -40,7 +49,7 @@ public class StatisticCollector {
         return shortestWord;
     }
 
-    public String longestWord(List<String> words){
+    public static String longestWord(List<String> words){
 
         String longestWord = "";
 
@@ -53,7 +62,6 @@ public class StatisticCollector {
                 maxLength = wordLength;
                 longestWord = word;
             }
-
         }
         return longestWord;
     }
